@@ -8,4 +8,4 @@ export const HabitsSchema = new Schema({
   },
 });
 
-export default mongoose.models.habits || mongoose.model('habits');
+export default mongoose.models.habits || mongoose.model('habits', HabitsSchema);
