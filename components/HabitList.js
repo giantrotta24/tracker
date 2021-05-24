@@ -1,4 +1,4 @@
-import Habit from "./Habit";
+import Habit from './Habit';
 
 const HabitList = ({ habits }) => {
   return (

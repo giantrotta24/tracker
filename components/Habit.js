@@ -1,17 +1,17 @@
-import HabitButton from "./HabitButton";
+import HabitButton from './HabitButton';
 
 const colors = [
-  "#718096",
-  "#F56565",
-  "#F6E05E",
-  "#68D391",
-  "#63B3ED",
-  "#00FF00",
-  "#9933FF",
+  '#718096',
+  '#F56565',
+  '#F6E05E',
+  '#68D391',
+  '#63B3ED',
+  '#00FF00',
+  '#9933FF',
 ];
 
 const getLast7Days = () => {
-  const days = "6543210".split("").map((day) => {
+  const days = '6543210'.split('').map((day) => {
     const tempDate = new Date();
     tempDate.setDate(tempDate.getDate() - day);
     return tempDate;

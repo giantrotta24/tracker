@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 const HabitButton = ({ date }) => {
   const [isComplete, setComplete] = useState(false);
@@ -11,7 +11,7 @@ const HabitButton = ({ date }) => {
     <span>
       {month}/{monthDate}
       <button onClick={() => setComplete(!isComplete)}>
-        {isComplete ? "X" : "O"}
+        {isComplete ? 'X' : 'O'}
       </button>
       <style jsx>{`
         span {

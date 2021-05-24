@@ -1,4 +1,4 @@
-import { Formik, Field, Form } from "formik";
+import { Formik, Field, Form } from 'formik';
 
 const HabitForm = ({ setHabits }) => {
   const handleSubmit = (values) => {
@@ -7,10 +7,10 @@ const HabitForm = ({ setHabits }) => {
   };
 
   return (
-    <Formik initialValues={{ habit: "" }} onSubmit={handleSubmit}>
+    <Formik initialValues={{ habit: '' }} onSubmit={handleSubmit}>
       {(context) => {
         const handleCancel = () => {
-          context.setFieldValue("habit", "");
+          context.setFieldValue('habit', '');
         };
 
         return (

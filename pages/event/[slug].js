@@ -1,6 +1,6 @@
-import { useRouter } from "next/router";
+import { useRouter } from 'next/router';
 
-import Layout from "../../components/Layout";
+import Layout from '../../components/Layout';
 
 const Event = () => {
   const router = useRouter();

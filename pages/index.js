@@ -1,11 +1,11 @@
-import { useState } from "react";
-import { useQuery } from "@apollo/react-hooks";
-import gql from "graphql-tag";
+import { useState } from 'react';
+import { useQuery } from '@apollo/react-hooks';
+import gql from 'graphql-tag';
 
-import { withApollo } from "../lib/apollo";
-import Layout from "../components/Layout";
-import HabitForm from "../components/HabitForm";
-import HabitList from "../components/HabitList";
+import { withApollo } from '../lib/apollo';
+import Layout from '../components/Layout';
+import HabitForm from '../components/HabitForm';
+import HabitList from '../components/HabitList';
 
 const HELLO_QUERY = gql`
   query HelloQuery {
@@ -15,7 +15,7 @@ const HELLO_QUERY = gql`
 
 const Home = () => {
   const { data, loading, error } = useQuery(HELLO_QUERY);
-  const [habits, setHabits] = useState(["Do the dishes"]);
+  const [habits, setHabits] = useState(['Do the dishes']);
 
   if (loading) return <div />;
   return (
