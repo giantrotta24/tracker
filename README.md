@@ -1,6 +1,5 @@
 # tracker
-Following along with Level Up's FullStack React with NextJS tutorial.
-[tutorial](https://www.leveluptutorials.com/tutorials/fullstack-react-with-nextjs/series-introduction)
+Following along with Level Up's FullStack React with NextJS [tutorial](https://www.leveluptutorials.com/tutorials/fullstack-react-with-nextjs/series-introduction).
 
 ## Concept
 A habit tracker made using React and NextJS. 
