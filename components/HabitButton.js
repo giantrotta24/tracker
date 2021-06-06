@@ -28,6 +28,8 @@ const REMOVE_EVENT = gql`
 `;
 
 const HabitButton = ({ date, habitId, events }) => {
+  console.log(date);
+
   // TODO: Update these with optimistic UI
   const [addEvent] = useMutation(ADD_EVENT, {
     refetchQueries: ['getHabits'],
