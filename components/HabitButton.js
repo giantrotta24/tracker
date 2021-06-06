@@ -37,18 +37,22 @@ const HabitButton = ({ date, habitId, events }) => {
     refetchQueries: ['getHabits'],
   });
 
-  const isFound = false;
+  // is the date coming in equal to the date on the button
+  const foundDate = (events || []).find((event) => {
+    const eventDate = new Date(event.date); // comes in as date string, so convert to Date
+    return eventDate.getDate() === date.getDate();
+  });
 
   // javascript getMonth returns 0-11 😒
   const month = date.getMonth() + 1;
   const monthDate = date.getDate();
 
   const handleClick = () => {
-    isFound
+    foundDate
       ? removeEvent({
           variables: {
             habitId,
-            eventId: 'kjlhgfjkl',
+            eventId: foundDate._id,
           },
         })
       : addEvent({
@@ -63,7 +67,7 @@ const HabitButton = ({ date, habitId, events }) => {
   return (
     <span>
       {month}/{monthDate}
-      <button onClick={handleClick}>{isFound ? 'X' : 'O'}</button>
+      <button onClick={handleClick}>{foundDate ? 'X' : 'O'}</button>
       <style jsx>{`
         span {
           display: flex;
