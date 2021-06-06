@@ -12,9 +12,11 @@ const ADD_HABIT = gql`
 `;
 
 const HabitForm = ({ setHabits }) => {
-  const [addHabit] = useMutation(ADD_HABIT);
+  const [addHabit] = useMutation(ADD_HABIT, {
+    refetchQueries: ['getHabits'],
+  });
 
-  const handleSubmit = (values) => {
+  const handleSubmit = (values, actions) => {
     addHabit({
       variables: {
         habit: {
@@ -22,6 +24,8 @@ const HabitForm = ({ setHabits }) => {
         },
       },
     });
+
+    actions.setFieldValue('habit', '');
   };
 
   return (
@@ -33,7 +37,7 @@ const HabitForm = ({ setHabits }) => {
 
         return (
           <Form>
-            <Field placeholder="Habit" name="habit" />
+            <Field placeholder="Enter your next habit" name="habit" />
             <div>
               <button type="submit">Submit</button>
               <button type="button" onClick={handleCancel}>
