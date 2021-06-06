@@ -1,8 +1,33 @@
-import { useState } from 'react';
+import { useMutation } from '@apollo/react-hooks';
+import gql from 'graphql-tag';
+
+const ADD_EVENT = gql`
+  mutation addEvent($date: Date, $habitId: ID) {
+    addEvent(date: $date, habitId: $habitId) {
+      _id
+      name
+      events {
+        _id
+        date
+      }
+    }
+  }
+`;
+
+const REMOVE_EVENT = gql`
+  mutation removeEvent($eventId: ID, $habitId: ID) {
+    removeEvent(eventId: $eventId, habitId: $habitId) {
+      _id
+      name
+      events {
+        _id
+        date
+      }
+    }
+  }
+`;
 
 const HabitButton = ({ date }) => {
-  const [isComplete, setComplete] = useState(false);
-
   // javascript getMonth returns 0-11 😒
   const month = date.getMonth() + 1;
   const monthDate = date.getDate();

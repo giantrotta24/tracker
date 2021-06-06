@@ -13,5 +13,13 @@ export const habitsMutations = {
         console.log(error);
       }
     },
+
+    async addEvent(_, { habitId, date }) {
+      console.log('add event'); // TODO: alert the user
+    },
+
+    async removeEvent(_, { habitId, eventId }) {
+      console.log('remove event'); // TODO: alert the user
+    },
   },
 };

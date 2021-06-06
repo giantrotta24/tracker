@@ -1,7 +1,15 @@
+scalar Date
+
 # data coming out
 type Habit {
   _id: ID!
   name: String!
+  events: [Event]
+}
+
+type Event {
+  _id: ID!
+  date: Date
 }
 
 # data coming in
@@ -14,6 +22,8 @@ input HabitInput {
 type Mutation {
   # data coming into mutation needs to fit HabitInput shape
   addHabit(habit: HabitInput): Habit
+  addEvent(habitId: ID, date: Date): Habit
+  removeEvent(habitId: ID, eventId: ID): Habit
 }
 
 type Query {
