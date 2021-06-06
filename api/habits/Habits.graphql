@@ -1,0 +1,21 @@
+# data coming out
+type Habit {
+  _id: ID!
+  name: String!
+}
+
+# data coming in
+input HabitInput {
+  _id: ID
+  name: String!
+}
+
+# define mutations allowed
+type Mutation {
+  # data coming into mutation needs to fit HabitInput shape
+  addHabit(habit: HabitInput): Habit
+}
+
+type Query {
+  habits: [Habit]
+}
