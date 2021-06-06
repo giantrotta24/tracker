@@ -7,6 +7,10 @@ const GET_HABITS = gql`
     habits {
       _id
       name
+      events {
+        _id
+        date
+      }
     }
   }
 `;
@@ -15,6 +19,9 @@ const HabitList = () => {
   const { data, loading, error } = useQuery(GET_HABITS);
 
   if (loading) return <section />;
+  if (!loading && error) {
+    console.log(error); // TODO: what do we here besides console logging?
+  }
 
   const { habits } = data;
 
