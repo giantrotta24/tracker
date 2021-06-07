@@ -8,7 +8,7 @@ Also using a mongo DB with an Apollo GraphQL Client.
 The tutorial uses the form library [fresh](https://github.com/leveluptuts/fresh) but I chose [Formik](https://github.com/formium/formik) instead.
 
 ## Done With The Tutorial, Where To Go From Here
-- [x] Host on Vercel
+- [ ] Host on Vercel
 - [ ] Authentication
 - [ ] Limit events from mongo queries, other performance updates
 - [ ] SSR habit pages with graphs, other ways to visualize your progress over time
